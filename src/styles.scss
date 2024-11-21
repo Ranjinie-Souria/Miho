@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(
+      45deg,
+      rgba(252, 224, 173, 0.8),
+      rgba(185, 162, 231, 0.8),
+      rgba(170, 226, 226, 0.8)
+    ),
+    url("/assets/animal-03.png");
+  background-size: 400% 400%, auto;
+  background-repeat: repeat, repeat;
+  background-position: 0% 50%, top left;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%, top left;
+  }
+  50% {
+    background-position: 100% 50%, top left;
+  }
+  100% {
+    background-position: 0% 50%, top left;
+  }
+}
+
+.main-conteneur {
+  font-family: "MS Gothic";
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pinkwave {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: arial;
+  color: transparent;
+  background: url("https://miho.nekoweb.org/favicon.png") repeat-x #b9a2e7;
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 100%;
+  background-position-x: 0;
+  background-position-y: 2em;
+  -webkit-transition: background-position-y 0.6s ease;
+  transition: background-position-y 0.6s ease;
+  -webkit-animation: waveAnimation 4s infinite linear;
+  animation: waveAnimation 4s infinite linear;
+  filter: drop-shadow(1px 1px white) drop-shadow(-1px 1px white)
+    drop-shadow(1px -1px white) drop-shadow(-1px -1px white)
+    drop-shadow(1px 1px rgba(185, 162, 231, 1))
+    drop-shadow(-1px 1px rgba(185, 162, 231, 1))
+    drop-shadow(1px -1px rgba(185, 162, 231, 1))
+    drop-shadow(-1px -1px rgba(185, 162, 231, 1));
+  background-position-x: 0;
+  background-position-y: 0;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@keyframes waveAnimation {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 200%;
+  }
+}

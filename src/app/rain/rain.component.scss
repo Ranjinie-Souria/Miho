@@ -1,0 +1,54 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.raindrop {
+  position: absolute;
+  top: -50px;
+  left: var(--x-position);
+  width: var(--size);
+  height: auto;
+  opacity: 0;
+  animation: fall 5s linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.raindrop:nth-child(odd) {
+  animation-duration: 4s;
+  --delay: 0s;
+}
+
+.raindrop:nth-child(even) {
+  animation-duration: 5s;
+  --delay: 1s;
+}
+
+.raindrop {
+  --x-position: calc(100vw * var(--random));
+  --size: calc(10px + (30 * var(--random))) px;
+  object-fit: contain;
+}

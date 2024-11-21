@@ -1,0 +1,12 @@
+<div class="rain">
+  <img
+    *ngFor="let raindrop of raindrops"
+    [src]="raindrop.image"
+    class="raindrop"
+    [ngStyle]="{
+      '--delay': raindrop.delay,
+      '--x-position': raindrop.xPosition,
+      '--size': raindrop.size
+    }"
+  />
+</div>
